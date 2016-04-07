@@ -59,7 +59,7 @@ Create the required directories
     mkdir -p /var/log/opscode-push-jobs-client
 
     touch /etc/sv/opscode-push-jobs-client/log/config
-    ln -s /var/log/opscode-push-jobs-client/config /etc/sv/opscode-push-jobs-client/log/config
+    ln -s /etc/sv/opscode-push-jobs-client/log/config /var/log/opscode-push-jobs-client/config
 
 Create a script ```/etc/sv/opscode-push-jobs-client/run``` with 755 permissions
 
