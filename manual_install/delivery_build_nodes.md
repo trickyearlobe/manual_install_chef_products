@@ -70,7 +70,7 @@ Create a script ```/etc/sv/opscode-push-jobs-client/log/run``` with 755 permissi
 
 Create a symlink in the init.d directory to sv
 
-    ln -s /etc/init.d/opscode-push-jobs-client /sbin/sv
+    ln -s /sbin/sv /etc/init.d/opscode-push-jobs-client
 
 Create a symlink for pushy in the service directory
 
