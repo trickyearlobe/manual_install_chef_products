@@ -34,6 +34,8 @@ Copy/paste the returned private key to the Delivery server as ```/etc/delivery/d
 
 Add the delivery user you created to the ```admins``` group in the Chef UI.
 
+NOTE: If you want Delivery to publish cookbooks to your Supermarket you need to log into Supermarket at least once as the delivery user to associate the account. If you don't, publishing to supermarket will fail unless you specify an alternate account (beyond the realm of this guide)
+
 ### Converge Delivery
 
     delivery-ctl reconfigure
@@ -55,4 +57,4 @@ Create the organisation and load the SSH public key into it
 
 Collect the ```admin``` and ```builder``` passwords from the screen and keep them safe.
 
-You will need the ```admin``` password to log into the UI and create Organisations
+NOTE: You will need the ```admin``` password to log into the UI and create Organisations

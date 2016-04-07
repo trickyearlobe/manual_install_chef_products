@@ -124,10 +124,13 @@ The contents should be:-
     client_key "#{current_dir}/delivery.pem"
     trusted_certs_dir "/etc/chef/trusted_certs"
 
-### Trust the Delivery SSL certificate
+### Trust the Delivery and Supermarket SSL certificate
 If Delivery is using self-signed SSL certificates you need to grab the SSL certificate and copy it to the build node under  ```/etc/chef/trusted_certs```
 
     openssl s_client -showcerts -connect delivery.myorg.chefdemo.net:443 </dev/null 2> /dev/null| openssl x509 -outform PEM > /etc/chef/trusted_certs/delivery.myorg.chefdemo.net
+
+    openssl s_client -showcerts -connect supermarket.myorg.chefdemo.net:443 </dev/null 2> /dev/null| openssl x509 -outform PEM > /etc/chef/trusted_certs/supermarket.myorg.chefdemo.net
+
 
 ### Lay down delivery-cmd and git_ssh scripts
 Copy [delivery-cmd](../reference/delivery-cmd) and [git_ssh](../reference/git_ssh) to ```/var/opt/delivery/workspace/lib``` and set permissions to 755
