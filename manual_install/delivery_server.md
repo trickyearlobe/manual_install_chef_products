@@ -53,4 +53,6 @@ Create the organisation and load the SSH public key into it
 
     delivery-ctl create-enterprise myorg --ssh-pub-key-file=/etc/delivery/myorg_ssh_key.pub
 
-Collect the admin and builder passwords from the screen and keep them safe.
+Collect the ```admin``` and ```builder``` passwords from the screen and keep them safe.
+
+You will need the ```admin``` password to log into the UI and create Organisations
