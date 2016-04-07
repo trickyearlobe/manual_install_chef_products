@@ -84,11 +84,22 @@ Create a symlink for pushy in the service directory
 
     mkdir -p /var/opt/delivery
     useradd dbuild -d /var/opt/delivery/workspace -m -s /bin/bash
+    mkdir -p /var/opt/delivery/workspace/bin
+    mkdir -p /var/opt/delivery/workspace/etc
+    mkdir -p /var/opt/delivery/workspace/lib
+    mkdir -p /var/opt/delivery/workspace/.chef
+
+### Lay down the delivery.pem and ssh keys
+
+    ****** Some stuff here ......
 
 ### Trust the Delivery SSL certificate
 If Delivery is using self-signed SSL certificates you need to grab the SSL certificate and copy it to the build node under  ```/etc/chef/trusted_certs```
 
     openssl s_client -showcerts -connect delivery.myorg.chefdemo.net:443 </dev/null 2> /dev/null| openssl x509 -outform PEM > /etc/chef/trusted_certs/delivery.myorg.chefdemo.net
+
+### Lay down delivery-cmd and git_ssh scripts
+Copy [delivery-cmd](../reference/delivery-cmd) and [git_ssh](../reference/git_ssh) to ```/var/opt/delivery/workspace/lib``` and set permissions to 755
 
 ### Set permissions so dbuild can read cheffy stuff
 
@@ -96,3 +107,5 @@ If Delivery is using self-signed SSL certificates you need to grab the SSL certi
     chmod 644 /etc/chef/client.rb
     chmod 755 /etc/chef/trusted_certs
     chmod 644 /etc/chef/trusted_certs/*
+
+    chown -R dbuild:root /var/opt/delivery/workspace
