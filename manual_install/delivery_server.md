@@ -15,22 +15,22 @@ Obtain and install the ```delivery``` package using the instructions for [Gettin
 Edit [/etc/delivery/delivery.rb](../reference/delivery.rb.md) to contain something similar to:-
 
     delivery_fqdn 'delivery.myorg.chefdemo.net'
-    delivery['chef_username'] = 'delivery_myorg'
-    delivery['chef_private_key'] = '/etc/delivery/delivery_myorg.pem'
+    delivery['chef_username'] = 'delivery'
+    delivery['chef_private_key'] = '/etc/delivery/delivery.pem'
     delivery['chef_server'] = 'https://chef.myorg.chefdemo.net/organizations/myorg'
 
 ### Create a delivery user in Chef Server
 Log in to the Chef server and create a user with admin rights that Delivery can use to manipulate cookbooks.
 
-In this example we will create a ```delivery_myorg``` user in the ```myorg``` organisation.
+In this example we will create a ```delivery``` user in the ```myorg``` organisation.
 
     # Create a Chef user for Delivery to use
-    chef-server-ctl user-create delivery_myorg Delivery MyOrg delivery@email.fake random_password
+    chef-server-ctl user-create delivery Delivery MyOrg delivery@email.fake random_password
 
-    # Add delivery_myorg to myorg
-    chef-server-ctl org-user-add myorg delivery_myorg
+    # Add delivery to myorg
+    chef-server-ctl org-user-add myorg delivery
 
-Copy/paste the returned private key to the Delivery server as ```/etc/delivery/delivery_myorg.pem```
+Copy/paste the returned private key to the Delivery server as ```/etc/delivery/delivery.pem```
 
 Add the delivery user you created to the ```admins``` group in the Chef UI.
 

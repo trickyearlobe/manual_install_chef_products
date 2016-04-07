@@ -5,6 +5,7 @@ Here are the instructions for manually installing Chef products. The aim is to e
 * Manual install for [Chef Server](./manual_install/chef_server.md) and its addons (pushy, reporting, manage)
 * Manual install for [Supermarket Server](./manual_install/supermarket_server.md)
 * Manual install for [Delivery Server](./manual_install/delivery_server.md)
+* Manual install for [Delivery Build Nodes](./manual_install/delivery_build_nodes.md)
 
 The install documents are stored in the ```manual_install``` directory of this repo.
 

@@ -24,6 +24,11 @@ If you don't have internet access or a local gem server you will need to downloa
 
 # Configuring the build node
 
+### Bootstrap the buildnode
+On your dev workstation which has been configured to talk to chef server.
+
+    knife bootstrap <options> <nodename>
+
 ### Create a Push Jobs configuration
 Create ```/etc/chef/push-jobs-client.rb``` with contents similar to the following
 
@@ -38,9 +43,8 @@ Create ```/etc/chef/push-jobs-client.rb``` with contents similar to the followin
     ssl_verify_mode   :verify_peer
 
     whitelist({
-	    'chef-client'  => 'chef-client',
-	    'delivery_cmd' => 'delivery_cmd',
-	    'delivery-cli' => 'delivery-cli'
+	     'chef-client'  => 'chef-client',
+	     /^delivery-cmd (.+)$/=>"/var/opt/delivery/workspace/bin/delivery-cmd '\\1'"
     })
 
     # We're under runit, so don't output timestamp
@@ -70,13 +74,25 @@ Create a script ```/etc/sv/opscode-push-jobs-client/log/run``` with 755 permissi
 
 Create a symlink in the init.d directory to sv
 
-    ln -s /etc/init.d/opscode-push-jobs-client /sbin/sv
+    ln -s /sbin/sv /etc/init.d/opscode-push-jobs-client
 
 Create a symlink for pushy in the service directory
 
     ln -s /etc/sv/opscode-push-jobs-client /etc/service/opscode-push-jobs-client
 
-### Create the dbuild user and give it some credentials
+### Create the dbuild user and workspace (home dir)
 
+    mkdir -p /var/opt/delivery
+    useradd dbuild -d /var/opt/delivery/workspace -m -s /bin/bash
+
+### Trust the Delivery SSL certificate
+If Delivery is using self-signed SSL certificates you need to grab the SSL certificate and copy it to the build node under  ```/etc/chef/trusted_certs```
+
+    openssl s_client -showcerts -connect delivery.myorg.chefdemo.net:443 </dev/null 2> /dev/null| openssl x509 -outform PEM > /etc/chef/trusted_certs/delivery.myorg.chefdemo.net
 
 ### Set permissions so dbuild can read cheffy stuff
+
+    chmod 755 /etc/chef
+    chmod 644 /etc/chef/client.rb
+    chmod 755 /etc/chef/trusted_certs
+    chmod 644 /etc/chef/trusted_certs/*
