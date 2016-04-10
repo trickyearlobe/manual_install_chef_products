@@ -67,6 +67,10 @@ cd chocngnaw
 delivery setup
 ls -al ./.delivery/
 delivery token
+delivery setup
+```
+( The full command should be "delivery setup --ent=westpacnz --org=demo --user=scott --server=delivery.westpacnz.chefdemo.net", but again since this is specified in our `././delviery/cli.toml` it is not required )
+```
 cat ls -al ~/.delivery/api-tokens
 echo "# chocngaw" >> README.md
 git status
