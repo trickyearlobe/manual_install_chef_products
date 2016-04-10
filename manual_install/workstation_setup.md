@@ -17,10 +17,13 @@ server = "delivery.westpacnz.chefdemo.net"
 user = "scott"
 ```
 # Login to chef server and obtain your private key and validator key
+```
 cp ~/Downloads/scott.pem ./.chef/
 vi ./.chef/knife.rb
 ```
-# See https://docs.getchef.com/config_rb_knife.html for more information on knife configuration options
+add the following content
+```
+#See https://docs.getchef.com/config_rb_knife.html for more information on knife configuration options
 current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
