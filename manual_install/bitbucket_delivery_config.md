@@ -9,8 +9,10 @@ openssl s_client -showcerts -connect {BITBUCKET_SERVER}:443 </dev/null 2>/dev/nu
 update-ca-trust extract
 ```
 add customer ca, as unable to add bitbucket server through the gui
+
+( this is needed when the customer is using privately signed keys for their bitbucket server )
 ```
-/etc/pki/ca-trust/source/anchors/mycacert.crt
+/etc/pki/ca-trust/source/anchors/customercacert.crt
 update-ca-trust extract
 ```
 # Add the following to login to bitbucket
