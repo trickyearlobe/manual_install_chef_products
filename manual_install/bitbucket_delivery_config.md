@@ -10,7 +10,7 @@ update-ca-trust extract
 ```
 add customer ca, as unable to add bitbucket server through the gui
 
-( this is needed when the customer is using privately signed keys for their bitbucket server )
+( this is needed when the customer is using self-signed certs for their bitbucket server )
 ```
 /etc/pki/ca-trust/source/anchors/customercacert.crt
 update-ca-trust extract
