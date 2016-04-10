@@ -8,6 +8,8 @@ mkdir .delivery
 mkdir .chef
 vi ./.delivery/cli.toml
 ```
+add the following to the file
+```
 api_protocol = "https"
 enterprise = "westpacnz"
 git_port = "8989"
