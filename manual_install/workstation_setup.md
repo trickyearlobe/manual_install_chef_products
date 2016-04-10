@@ -33,7 +33,7 @@ node_name                "scott"
 client_key               "#{current_dir}/scott.pem"
 validation_client_name   "customer-validator"
 validation_key           "#{current_dir}/customer-validator.pem"
-chef_server_url          "https://chef.customer.chefdemo.net/organizations/westpacnz"
+chef_server_url          "https://chef.customer.chefdemo.net/organizations/customer"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 knife[:supermarket_site] = 'https://supermarket.customer.chefdemo.net'
 ```
