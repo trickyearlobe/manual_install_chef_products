@@ -1,5 +1,5 @@
 ```
-cd Westpac/
+cd Customer/
 mkdir Delivery
 cd Delivery/
 delivery --version
@@ -11,11 +11,11 @@ vi ./.delivery/cli.toml
 add the following to the file `cli.toml` file
 ```
 api_protocol = "https"
-enterprise = "westpacnz"
+enterprise = "customer"
 git_port = "8989"
 organization = "demo"
 pipeline = "master"
-server = "delivery.westpacnz.chefdemo.net"
+server = "delivery.customer.chefdemo.net"
 user = "scott"
 ```
 # Login to chef server and obtain your private key and validator key
@@ -31,11 +31,11 @@ log_level                :info
 log_location             STDOUT
 node_name                "scott"
 client_key               "#{current_dir}/scott.pem"
-validation_client_name   "westpacnz-validator"
-validation_key           "#{current_dir}/westpacnz-validator.pem"
-chef_server_url          "https://chef.westpacnz.chefdemo.net/organizations/westpacnz"
+validation_client_name   "customer-validator"
+validation_key           "#{current_dir}/customer-validator.pem"
+chef_server_url          "https://chef.customer.chefdemo.net/organizations/westpacnz"
 cookbook_path            ["#{current_dir}/../cookbooks"]
-knife[:supermarket_site] = 'https://supermarket.westpacnz.chefdemo.net'
+knife[:supermarket_site] = 'https://supermarket.customer.chefdemo.net'
 ```
 copy in your validator.pem
 ```
