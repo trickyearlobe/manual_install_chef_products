@@ -40,9 +40,9 @@ knife[:supermarket_site] = 'https://supermarket.customer.chefdemo.net'
 copy in your validator.pem
 ```
 cp ~/downloads ./.chef/westpacnz-validator.pem
-mkdir cookbooks
-cd cookbooks/
-delivery token
+ignore mkdir cookbooks
+ignore cd cookbooks/
+ignore delivery token
 chef gem install knife-push --pre
 knife node status
 knife status
@@ -52,3 +52,28 @@ knife status
 knife node status
 knife job status
 ```
+Create a project in Delivery ( via the delivery gui )
+Login to delivery, select an organistion ( demo ), and then create a new project ( chocngnaw )
+
+On your local workstation, do the following
+```
+mkdir chocngnaw
+cd chocngnaw
+delivery clone chocngnaw
+```
+(the full command would be "delivery clone chocngnaw --ent=customer --org=demo --user=scott --server=delivery.customer.chefdemo.net" ), but most of this is already specified in our `./.delivery/cli.toml` file
+```
+cd chocngnaw
+delivery setup
+ls -al ./.delivery/
+delivery token
+cat ls -al ~/.delivery/api-tokens
+echo "# chocngaw" >> README.md
+git status
+git add README
+git status
+git commit -m "Initial commit"
+ls -al
+```
+
+
