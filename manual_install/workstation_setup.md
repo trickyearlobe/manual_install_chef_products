@@ -74,6 +74,15 @@ Login to delivery ( as your username ), select an organistion ( demo ), and then
 
 if using bitbucket, refer to https://docs.chef.io/integrate_delivery_bitbucket.html
 
+create a new repo in bitbucket, called "project_delivery"
+git clone https://bitbucket.my.url/scm/chef/project_delivery
+cd project_delivery
+git init
+touch README.me
+git add --all
+git commit -m "Initial commit"
+git push - u origin master
+
 On your local workstation, do the following
 ```
 mkdir chocngnaw
