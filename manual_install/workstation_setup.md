@@ -18,7 +18,7 @@ pipeline = "master"
 server = "delivery.customer.chefdemo.net"
 user = "scott"
 ```
-# Login to chef server and obtain your private key and validator key
+Login to chef server and obtain your private key and validator key
 ```
 cp ~/Downloads/scott.pem ./.chef/
 vi ./.chef/knife.rb
