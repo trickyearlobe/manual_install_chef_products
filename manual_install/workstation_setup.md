@@ -1,3 +1,6 @@
+Install delivery cli
+https://docs.chef.io/ctl_delivery.html
+
 ```
 cd Customer/
 mkdir Delivery
