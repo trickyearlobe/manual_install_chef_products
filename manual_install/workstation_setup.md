@@ -1,6 +1,12 @@
 Install delivery cli
 https://docs.chef.io/ctl_delivery.html
 
+Login to the delivery gui, and add a user
+add an organisation eg "customer_test"
+
+install chefdk, delivery cli, and git
+
+
 ```
 cd Customer/
 mkdir Delivery
