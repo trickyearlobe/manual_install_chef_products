@@ -69,7 +69,7 @@ ls -al ./.delivery/
 delivery token
 delivery setup
 ```
-( The full command should be "delivery setup --ent=westpacnz --org=demo --user=scott --server=delivery.westpacnz.chefdemo.net", but again since this is specified in our `././delviery/cli.toml` it is not required )
+( The full command should be "delivery setup --ent=customer --org=demo --user=scott --server=delivery.customer.chefdemo.net", but again since this is specified in our `././delviery/cli.toml` it is not required )
 ```
 cat ls -al ~/.delivery/api-tokens
 echo "# chocngaw" >> README.md
@@ -78,6 +78,10 @@ git add README
 git status
 git commit -m "Initial commit"
 ls -al
+```
+Run delivery init, which will create an empty build cookbook for you (with an empty set of phase recipes), add the cookbook to your project, create the new pipeline and submit the project to Delivery for review: 
+```
+delviery init
 ```
 
 
