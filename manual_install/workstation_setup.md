@@ -83,6 +83,10 @@ git add --all
 git commit -m "Initial commit"
 git push - u origin master
 
+delivery config, for  bitbucket project in delivery gui
+Project Key eg CHEF
+repo name "project_delivery"
+
 On your local workstation, do the following
 ```
 mkdir chocngnaw
