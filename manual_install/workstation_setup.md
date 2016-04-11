@@ -6,8 +6,15 @@ add an organisation eg "customer_test"
 
 install chefdk, delivery cli, and git
 
-
+type
 ```
+deliver
+git
+chef --version
+```
+make sure all at latest versions, if not upgrade
+
+
 cd Customer/
 mkdir Delivery
 cd Delivery/
@@ -52,6 +59,7 @@ cp ~/downloads ./.chef/westpacnz-validator.pem
 ignore mkdir cookbooks
 ignore cd cookbooks/
 ignore delivery token
+chef gem list |grep knife-push
 chef gem install knife-push --pre
 knife node status
 knife status
@@ -62,7 +70,9 @@ knife node status
 knife job status
 ```
 Create a project in Delivery ( via the delivery gui )
-Login to delivery, select an organistion ( demo ), and then create a new project ( chocngnaw )
+Login to delivery ( as your username ), select an organistion ( demo ), and then create a new project ( chocngnaw )
+
+if using bitbucket, refer to https://docs.chef.io/integrate_delivery_bitbucket.html
 
 On your local workstation, do the following
 ```
