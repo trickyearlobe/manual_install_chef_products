@@ -14,7 +14,7 @@ chef --version
 ```
 make sure all at latest versions, if not upgrade
 
-
+```
 cd Customer/
 mkdir Delivery
 cd Delivery/
