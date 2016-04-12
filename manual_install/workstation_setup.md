@@ -122,9 +122,11 @@ download repo from bitbucket, need to fix the ssl cert issue.
 ```
 git clone -c http.sslVerify=false clone https://stash.customer.co.uk/scm/chef/project_delivery
 ```
+ssh to your delivery server, and accept the host hey ( ie the ssh host identifciation )
+note, this has to be on port 8989, not the normal 22.  
 ```
-cd chocngnaw
-delivery setup
+ssh delivery.customer.chefdemo.net -p 8989
+delivery init
 ls -al ./.delivery/
 delivery token
 delivery setup
