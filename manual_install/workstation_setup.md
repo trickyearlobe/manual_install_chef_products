@@ -127,6 +127,13 @@ note, this has to be on port 8989, not the normal 22.
 ```
 ssh delivery.customer.chefdemo.net -p 8989
 delivery init
+```
+Had error messages here, due to the private key not being in the correct place.  
+we are on windows, and private keys were in C:\users\userid/.ssh    but the home drive is mapped to h:\, so we created .ssh on H:., and copied the files there.  We were running in a chefdk shell, powershell.   Error message below
+```Need to add the generic error message here
+```
+
+```
 ls -al ./.delivery/
 delivery token
 delivery setup
