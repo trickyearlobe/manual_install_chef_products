@@ -114,7 +114,7 @@ On your local workstation, do the following
 ```
 mkdir chocngnaw
 cd chocngnaw
-delivery clone chocngnaw
+delivery clone project_delivery
 ```
 (the full command would be "delivery clone chocngnaw --ent=customer --org=demo --user=scott --server=delivery.customer.chefdemo.net" ), but most of this is already specified in our `./.delivery/cli.toml` file
 ```
