@@ -71,10 +71,23 @@ gem: --no-doc
 ```
 ```
 chef gem install knife-push --pre
+```
+ignore the warning about your path
+```
 knife node status
+```
+nothing happening with this?
+```
 knife status
 knife ssl check
+```
+check if you trust the chef server certificate
+if not, then retreive it.
+```
 knife ssl fetch
+```
+then check it is ok
+```
 knife status
 knife node status
 knife job status
