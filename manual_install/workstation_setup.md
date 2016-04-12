@@ -117,6 +117,11 @@ cd chocngnaw
 delivery clone project_delivery
 ```
 (the full command would be "delivery clone chocngnaw --ent=customer --org=demo --user=scott --server=delivery.customer.chefdemo.net" ), but most of this is already specified in our `./.delivery/cli.toml` file
+
+download repo from bitbucket, need to fix the ssl cert issue.
+```
+git clone -c http.sslVerify=false clone https://stash.customer.co.uk/scm/chef/project_delivery
+```
 ```
 cd chocngnaw
 delivery setup
