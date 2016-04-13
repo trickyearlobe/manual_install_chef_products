@@ -13,7 +13,7 @@ install chefdk, delivery cli, and git
 
 type
 ```
-deliver
+delivery
 git
 chef --version
 ```
