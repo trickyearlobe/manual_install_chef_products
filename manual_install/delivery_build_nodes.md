@@ -133,7 +133,7 @@ If Delivery is using self-signed SSL certificates you need to grab the SSL certi
 
 
 ### Lay down delivery-cmd and git_ssh scripts
-Copy [delivery-cmd](../reference/delivery-cmd) and [git_ssh](../reference/git_ssh) to ```/var/opt/delivery/workspace/lib``` and set permissions to 755
+Copy [delivery-cmd](../reference/delivery-cmd) and [git_ssh](../reference/git_ssh) to ```/var/opt/delivery/workspace/bin``` and set permissions to 755
 
 ### Set /etc/chef permissions
 The dbuild user needs access to some stuff in /etc/chef which is normally only available to root so:-
