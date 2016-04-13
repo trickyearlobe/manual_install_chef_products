@@ -26,7 +26,7 @@ cd Customer/
 mkdir Delivery
 cd Delivery/
 delivery --version
-ls -al
+ls -al  ( `rdir` for windows users )
 mkdir .delivery
 mkdir .chef
 vi ./.delivery/cli.toml
