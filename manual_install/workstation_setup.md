@@ -98,6 +98,7 @@ Login to delivery ( as your username ), select an organistion ( demo ), and then
 if using bitbucket, refer to https://docs.chef.io/integrate_delivery_bitbucket.html
 
 create a new repo in bitbucket, called "project_delivery"
+```
 git clone https://bitbucket.my.url/scm/chef/project_delivery
 cd project_delivery
 git init
@@ -105,7 +106,7 @@ touch README.me
 git add --all
 git commit -m "Initial commit"
 git push - u origin master
-
+```
 delivery config, for  bitbucket project in delivery gui
 Project Key eg CHEF
 repo name "project_delivery"
@@ -126,16 +127,16 @@ ssh to your delivery server, and accept the host hey ( ie the ssh host identifci
 note, this has to be on port 8989, not the normal 22.  
 ```
 ssh delivery.customer.chefdemo.net -p 8989
-delivery init
+delivery token
 ```
 Had error messages here, due to the private key not being in the correct place.  
 we are on windows, and private keys were in C:\users\userid/.ssh    but the home drive is mapped to h:\, so we created .ssh on H:., and copied the files there.  We were running in a chefdk shell, powershell.   Error message below
-```Need to add the generic error message here
+```
+Need to add the generic error message here
 ```
 
 ```
 ls -al ./.delivery/
-delivery token
 delivery setup
 ```
 ( The full command should be "delivery setup --ent=customer --org=demo --user=scott --server=delivery.customer.chefdemo.net", but again since this is specified in our `././delviery/cli.toml` it is not required )
