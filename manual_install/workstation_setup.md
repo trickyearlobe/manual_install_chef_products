@@ -1,9 +1,10 @@
+All the following should be done on your local workstation, 
+
 Install delivery cli
 
+Note, stop before the paragraph "Configure Delivery CLI", in the following page
+
 https://docs.chef.io/ctl_delivery.html
-
-Note, stop before the paragraph "Configure Delivery CLI"
-
 
 Login to the delivery gui, and add a user
 add an organisation eg "customer_test"
