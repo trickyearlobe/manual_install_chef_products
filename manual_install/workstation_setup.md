@@ -19,6 +19,8 @@ chef --version
 ```
 make sure all at latest versions, if not upgrade
 
+Make a working directory.  This is where you will run the delivery project from.   You may have lots of different projects, so use one working directory per project.  For now, just use one directory. 
+
 ```
 cd Customer/
 mkdir Delivery
