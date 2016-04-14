@@ -103,6 +103,12 @@ Login to delivery ( as your username ), select an organistion ( demo ), and then
 if using bitbucket, refer to https://docs.chef.io/integrate_delivery_bitbucket.html
 
 create a new repo in bitbucket, called "project_delivery"
+
+note,  this section only required by first person to cerate the "project_delivery", you can try
+```
+delivery clone project_delivery
+```
+
 ```
 git clone https://bitbucket.my.url/scm/chef/project_delivery
 cd project_delivery
