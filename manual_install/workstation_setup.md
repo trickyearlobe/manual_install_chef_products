@@ -162,7 +162,7 @@ ls -al
 ```
 Run delivery init, which will create an empty build cookbook for you (with an empty set of phase recipes), add the cookbook to your project, create the new pipeline and submit the project to Delivery for review: 
 ```
-delviery init
+delivery init
 ```
 
 
