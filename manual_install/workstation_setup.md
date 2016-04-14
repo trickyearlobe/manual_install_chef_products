@@ -67,6 +67,7 @@ ignore mkdir cookbooks
 ignore cd cookbooks/
 ignore delivery token
 chef gem list |grep knife-push
+chef gem install knife-push --pre
 ```
 this appears to not be working in windows chefdk. 
 change the .gemrc file
@@ -75,9 +76,6 @@ change the .gemrc file
 - http://jenkins.customer.co.uk/artifactory/api/gems/gems-remote/
 :verbose: true
 gem: --no-doc
-```
-```
-chef gem install knife-push --pre
 ```
 ignore the warning about your path
 ```
