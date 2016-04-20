@@ -25,7 +25,7 @@ Log in to the Chef server and create a user with admin rights that Delivery can 
 In this example we will create a ```delivery``` user in the ```myorg``` organisation.
 
     # Create a Chef user for Delivery to use
-    chef-server-ctl user-create delivery Delivery MyOrg delivery@email.fake random_password
+    chef-server-ctl user-create delivery Delivery myorg delivery@email.fake random_password
 
     # Add delivery to myorg
     chef-server-ctl org-user-add myorg delivery
