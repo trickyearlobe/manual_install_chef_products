@@ -25,7 +25,7 @@ Whenever the chef server config is changed you need to re-converge it to pick up
     chef-server-ctl reconfigure
     opscode-push-jobs-server-ctl reconfigure
     opscode-reporting-ctl reconfigure
-    chef-manage-ctl reconfigure
+    opscode-manage-ctl reconfigure
 
 You can check everything (re)started OK with the following commands
 
