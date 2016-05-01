@@ -58,7 +58,7 @@ validation_client_name   "customer-validator"
 validation_key           "#{current_dir}/customer-validator.pem"
 chef_server_url          "https://chef.customer.chefdemo.net/organizations/myorg"
 cookbook_path            ["#{current_dir}/../cookbooks"]
-knife[:supermarket_site] = 'https://supermarket.customer.chefdemo.net'
+knife[:supermarket_site] = 'https://supermarket.myorg.chefdemo.net'
 ```
 copy in your validator.pem
 ```
