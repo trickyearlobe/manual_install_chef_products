@@ -36,10 +36,10 @@ add the following to the file `cli.toml` file
 api_protocol = "https"
 enterprise = "customer"
 git_port = "8989"
-organization = "demo"
+organization = "myorg"
 pipeline = "master"
 server = "delivery.customer.chefdemo.net"
-user = "scott"
+user = "delivery"
 ```
 Login to chef server and obtain your private key and validator key
 ```
@@ -56,13 +56,13 @@ node_name                "scott"
 client_key               "#{current_dir}/scott.pem"
 validation_client_name   "customer-validator"
 validation_key           "#{current_dir}/customer-validator.pem"
-chef_server_url          "https://chef.customer.chefdemo.net/organizations/customer"
+chef_server_url          "https://chef.customer.chefdemo.net/organizations/myorg"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 knife[:supermarket_site] = 'https://supermarket.customer.chefdemo.net'
 ```
 copy in your validator.pem
 ```
-cp ~/downloads ./.chef/westpacnz-validator.pem
+cp ~/downloads ./.chef/myorg-validator.pem
 ignore mkdir cookbooks
 ignore cd cookbooks/
 ignore delivery token
