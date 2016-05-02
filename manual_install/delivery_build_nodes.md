@@ -115,7 +115,7 @@ The builder uses two locations (and names) for the knife.rb. Place the following
 * ```/var/opt/delivery/workspace/etc/delivery.rb``` filemode 600 owner dbuild:root
 * ```/var/opt/delivery/workspace/.chef/knife.rb``` filemode 600 owner dbuild:root
 
-The contents should be:-
+The contents of delivery.rb should be:-
 
     current_dir = File.dirname(__FILE__)
     eval(IO.read('/etc/chef/client.rb'))
@@ -123,6 +123,24 @@ The contents should be:-
     node_name "delivery"
     client_key "#{current_dir}/delivery.pem"
     trusted_certs_dir "/etc/chef/trusted_certs"
+
+The contents of knife.rb should be:-
+    
+    # See http://docs.getchef.com/config_rb_knife.html for more information on knife configuration options
+
+    current_dir = File.dirname(__FILE__)
+    log_level                :info
+    log_location             STDOUT
+    node_name                "<%=node['delivery_build']['chef_username']%>"
+    client_key               "#{current_dir}/delivery.pem"
+    validation_client_name   "myorg-validator"
+    validation_key           "#{current_dir}//myorg-validator.pem"
+    chef_server_url          "https://chef.myorg.chefdemo.net/organizations/myorg"
+    cache_type               'BasicFile'
+    cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
+    cookbook_path            ["#{current_dir}/../cookbooks"]
+
+
 
 ### Trust the Delivery and Supermarket SSL certificate
 If Delivery is using self-signed SSL certificates you need to grab the SSL certificate and copy it to the build node under  ```/etc/chef/trusted_certs```
